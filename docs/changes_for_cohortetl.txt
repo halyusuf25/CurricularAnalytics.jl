@@ -8,4 +8,3 @@ Amend additional grade letters to grade(letter_grade::AbstractString) and grade(
 Include the followings attributes to the CourseRecord() struct, and modify the construct function accordingly
     earn_credit::Bool                   # is the credit for this course earned?
     grading_basis::AbstractString       # grading option (i.e. GRD = Regular Grades A, B, C, D, E)
-    repeat_code::AbstractString         # a code the explain the reason for retaking this course
