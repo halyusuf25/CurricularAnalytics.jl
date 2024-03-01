@@ -4,13 +4,18 @@ mutable struct CourseRecord
     course::Course                      # course that was attempted
     grade::Grade                        # grade earned in the course
     term::AbstractString                # term course was attempted
+    earn_credit::Bool                   # is the credit for this course earned?
+    grading_basis::AbstractString       # grading option (i.e. GRD = Regular Grades A, B, C, D, E)
 
     # Constructor
-    function CourseRecord(course::Course, grade::Grade, term::AbstractString="")
+    function CourseRecord(course::Course, grade::Grade, term::AbstractString="", 
+                            earn_credit::Bool=true, grading_basis::AbstractString="GRD")
         this = new()
         this.course = course
         this.grade = grade
         this.term = term
+        this.earn_credit = earn_credit
+        this.grading_basis = grading_basis
         return this
     end
 end

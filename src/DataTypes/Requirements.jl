@@ -7,41 +7,51 @@ Grade = UInt64
 # function for converting a letter grade into a integer, divide by 3 to convert to 4-point GPA scale 
 function grade(letter_grade::AbstractString)
     if letter_grade == "A➕"
-        return convert(Grade, 13) 
+        return convert(Grade, 130) 
     elseif letter_grade == "A"
-        return convert(Grade, 12) 
+        return convert(Grade, 120) 
     elseif letter_grade == "A➖"
-        return convert(Grade, 11) 
+        return convert(Grade, 110) 
     elseif letter_grade == "B➕"
-        return convert(Grade, 10) 
+        return convert(Grade, 100) 
     elseif letter_grade == "B"
-        return convert(Grade, 9) 
+        return convert(Grade, 90) 
     elseif letter_grade == "B➖"
-        return convert(Grade, 8) 
+        return convert(Grade, 80) 
     elseif letter_grade == "C➕"
-        return convert(Grade, 7) 
+        return convert(Grade, 70) 
     elseif letter_grade == "C"
-        return convert(Grade, 6) 
+        return convert(Grade, 60) 
     elseif letter_grade == "C➖"
-        return convert(Grade, 5) 
+        return convert(Grade, 50) 
     elseif letter_grade == "D➕"
-        return convert(Grade, 4) 
+        return convert(Grade, 40) 
     elseif letter_grade == "D"
-        return convert(Grade, 3) 
+        return convert(Grade, 30) 
     elseif letter_grade == "D➖"
-        return convert(Grade, 2) 
-    elseif letter_grade == "P"
-        return convert(Grade, 0) 
+        return convert(Grade, 20) 
     elseif letter_grade == "F"
         return convert(Grade, 0)  
+    elseif letter_grade == "E"
+        return convert(Grade, 1)
+    elseif letter_grade == "P"
+        return convert(Grade, 71) 
+    elseif letter_grade == "S"
+        return convert(Grade, 72) 
+    elseif letter_grade == "TR" #transfer credit
+        return convert(Grade, 73) 
+    elseif letter_grade == "CR" #exam credit
+        return convert(Grade, 74) 
     elseif letter_grade == "I" 
-        return convert(Grade, 0)  
+        return convert(Grade, 11)  
     elseif letter_grade == "WP" 
-        return convert(Grade, 0)  
+        return convert(Grade, 12)  
     elseif letter_grade == "W" 
-        return convert(Grade, 0)  
+        return convert(Grade, 13) 
+    elseif letter_grade == "WC" 
+        return convert(Grade, 14) 
     elseif letter_grade == "WF" 
-        return convert(Grade, 0)  
+        return convert(Grade, 15)  
     else
         error("letter grade $letter_grade is not supported")  
     end
@@ -49,32 +59,52 @@ end
 
 # function for converting an integer letter grade, divide by 3 to convert to 4-point GPA scale 
 function grade(int_grade::Grade)
-    if int_grade == 13
+    if int_grade == 130
         return "A➕" 
-    elseif int_grade == 12
+    elseif int_grade == 120
         return "A"
-    elseif int_grade == 11
+    elseif int_grade == 110
         return "A➖" 
-    elseif int_grade == 10
+    elseif int_grade == 100
         return "B➕" 
-    elseif int_grade == 9
+    elseif int_grade == 90
         return "B" 
-    elseif int_grade == 8
+    elseif int_grade == 80
         return "B➖"
-    elseif int_grade == 7
+    elseif int_grade == 70
         return "C➕" 
-    elseif int_grade == 6
+    elseif int_grade == 60
         return "C" 
-    elseif int_grade == 5
+    elseif int_grade == 50
         return "C➖" 
-    elseif int_grade == 4
+    elseif int_grade == 40
         return "D➕" 
-    elseif int_grade == 3
+    elseif int_grade == 30
         return "D" 
-    elseif int_grade == 2
+    elseif int_grade == 20
         return "D➖" 
     elseif int_grade == 0
         return "F" 
+    elseif int_grade == 1
+        return "E" 
+    elseif int_grade == 71
+        return "P" 
+    elseif int_grade == 72
+        return "S" 
+    elseif int_grade == 73
+        return "TR" 
+    elseif int_grade == 74
+        return "CR" 
+    elseif int_grade == 11
+        return "I" 
+    elseif int_grade == 12
+        return "WP" 
+    elseif int_grade == 13
+        return "W" 
+    elseif int_grade == 14
+        return "WC" 
+    elseif int_grade == 15
+        return "WF" 
     else
         error("grade value $int_grade is not supported")    
     end
